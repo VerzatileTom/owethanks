@@ -21,20 +21,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/apply-loan', function () {
     return view('apply-loan');
 });
-
 Route::get('/borrowers', function () {
    return view('borrowers');
-});
-
-Route::get('/borrower/schedules', function () {
-    $schedules = [];
-    $date = now()->addMonth();
-
-    while ($date <= now()->addMonth(6)) {
-        $schedules[] = $date->format('M d, Y');
-
-        $date->addMonth();
-    }
-
-    return view('schedules', compact('schedules'));
 });
