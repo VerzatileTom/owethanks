@@ -18,9 +18,3 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/apply-loan', function () {
-    return view('apply-loan');
-});
-Route::get('/borrowers', function () {
-   return view('borrowers');
-});
