@@ -27,6 +27,7 @@ class ApplyLoanTest extends TestCase
     public function a_user_should_see_the_apply_loan_form()
     {
         $this->withoutExceptionHandling();
+        $this->actingAs($this->loaner);
 
         $this->get('/apply-loan/' .$this->lender->id)
              ->assertSeeText('Apply Loan')
