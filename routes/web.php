@@ -23,3 +23,6 @@ Route::patch('/verify', 'UserController@update');
 
 Route::get('/apply-loan/{lender}', 'LoanController@show');
 Route::post('/apply-loan/{lender}', 'LoanController@store');
+Route::get('/loan-requests', 'LoanController@index');
+Route::patch('/loan-request/{loan}', 'LoanController@update');
+Route::get('/payment-schedules/{loan}', 'PaymentScheduleController@show');
