@@ -5,7 +5,10 @@
         <div class="flex item-center">
             <div class="w-3/5 mx-auto py-2">
                 <div class="card">
-                    <div class="card-header font-black leading-loose px-6 text-4xl">{{ __('Apply Loan') }}</div>
+                    <div class="card-header font-black leading-loose px-6 text-4xl">
+                        Apply Loan from
+                        {{ $lender->name }}
+                    </div>
 
                     <div class="card-body leading-loose px-6">
                         <form method="POST" action="">
@@ -19,11 +22,12 @@
                                         <div>
                                             <input
                                                 id="first_name"
-                                                type="text" first_name="first_name"
+                                                type="text"
+                                                name="first_name"
                                                 class="w-full rounded py-2 px-4 shadow @error('first_name') is-invalid @enderror"
                                                 value="{{ old('first_name') }}"
                                                 placeholder="Cardo"
-                                                required
+
                                                 autofocus
                                             />
 
@@ -48,7 +52,7 @@
                                                 class="w-full rounded py-2 px-4 shadow @error('last_name') is-invalid @enderror"
                                                 value="{{ old('last_name') }}"
                                                 placeholder="Immortal"
-                                                required
+
                                             />
 
                                             @error('last_name')
@@ -72,7 +76,7 @@
                                                 class="w-full rounded py-2 px-4 shadow @error('middle_name') is-invalid @enderror"
                                                 value="{{ old('middle_name') }}"
                                                 placeholder="Dalisay"
-                                                required
+
                                             >
 
                                             @error('middle_name')
@@ -98,7 +102,7 @@
                                                 class="w-full rounded py-2 px-4 shadow @error('phone_number') is-invalid @enderror"
                                                 value="{{ old('phone_number') }}"
                                                 placeholder="09123456789"
-                                                required
+
                                             >
 
                                             @error('phone_number')
@@ -122,7 +126,7 @@
                                                 class="w-full rounded py-2 px-4 shadow @error('email_address') is-invalid @enderror"
                                                 value="{{ old('email_address') }}"
                                                 placeholder="cardodalisay@fligno.com"
-                                                required
+
                                             >
 
                                             @error('email_address')
@@ -171,7 +175,7 @@
                                                 class="w-full rounded py-2 px-4 shadow @error('position') is-invalid @enderror"
                                                 value="{{ old('position') }}"
                                                 placeholder="Police"
-                                                required
+
                                             />
 
                                             @error('position')
@@ -197,7 +201,7 @@
                                                 class="w-full rounded py-2 px-4 shadow @error('amount') is-invalid @enderror"
                                                 value="{{ old('amount') }}"
                                                 placeholder="10000"
-                                                required
+
                                             />
 
                                             @error('amount')
@@ -220,7 +224,7 @@
                                                 class="w-full rounded py-2 px-4 shadow @error('payment_term') is-invalid @enderror"
                                                 value="{{ old('payment_term') }}"
                                                 placeholder="6"
-                                                required
+
                                             />
 
                                             @error('payment_term')

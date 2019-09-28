@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateArticlesTable extends Migration
+class AddVerifiedPhotoInUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateArticlesTable extends Migration
      */
     public function up()
     {
-        Schema::create('articles', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('title');
-            $table->text('content');
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->boolean('verified')->default(false);
+            $table->text('photo')->nullable();
         });
     }
 
@@ -28,6 +26,8 @@ class CreateArticlesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('articles');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn(['verified', 'photo']);
+        });
     }
 }

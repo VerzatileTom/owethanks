@@ -18,3 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::patch('/verify', 'UserController@update');
+
+Route::get('/apply-loan/{lender}', 'LoanController@show');
+Route::post('/apply-loan/{lender}', 'LoanController@store');
